@@ -21,18 +21,27 @@ Optimized for performance, responsiveness, and clean design—making it both lig
 - Smooth page transitions & animations with **AOS (Animate On Scroll)**.  
 
 ### 🧩 Reusable Components  
-- Core building blocks like `DashboardLayout`, `Table`, `FormModal`, `Loading`, `Notifications`, and `ErrorBoundary`.  
+- Core building blocks like `DashboardLayout`, `Table`, `FormModal`, `Sidebar`, `Pagination`, `Button`, `Header`, `Loading`, `Notifications`, and `ErrorBoundary`.  
 - Modular design for easy extension and scalability.  
 
 ### ⚠️ Error Handling & Edge Cases  
-- Inline server-side validation error handling.  
-- Graceful fallback for **network issues** and **empty data** states.  
+- **Client-side validation**: All form fields are validated before submission (e.g., required fields, email format).    
 - Global **React ErrorBoundary** prevents unexpected crashes.  
 
 ---
 
-## 🏗️ Project Structure
+## 🌐 APIs Used  
 
+This project relies on dummy data provided by **[DummyJSON](https://dummyjson.com/)**:  
+
+- 👥 **Users API** → `https://dummyjson.com/users`  
+- 📝 **Posts API** → `https://dummyjson.com/posts`  
+
+---
+
+## 🏗️ Project Structure  
+
+```
 src/
 ├─ api/
 │  ├─ postsApi.js  
@@ -41,10 +50,10 @@ src/
 │  ├─ DashboardLayout.jsx
 │  ├─ Table.jsx
 │  ├─ FormModal.jsx
-|  ├─ Sidebar.jsx
-|  ├─ Pagination.jsx
-|  ├─ Button.jsx
-|  ├─ Header.jsx
+│  ├─ Sidebar.jsx
+│  ├─ Pagination.jsx
+│  ├─ Button.jsx
+│  ├─ Header.jsx
 │  ├─ Loading.jsx
 │  ├─ Notifications.jsx
 │  └─ ErrorBoundary.jsx
@@ -62,8 +71,17 @@ src/
 ├─ App.jsx
 ├─ main.jsx
 └─ index.css
+```
 
 ---
+## 📸 Screenshots  
+
+### 🔑 Login Page  
+![Login Screenshot](/login.png)  
+
+### 🖥️ Dashboard  
+![Dashboard Screenshot](/dashboard.png)  
+
 
 ## ⚡ Getting Started  
 
@@ -71,3 +89,20 @@ src/
 ```bash
 git clone https://github.com/AbdelrahmanHabib24/Data-board.git
 cd Data-board
+```
+
+### 2️⃣ Install dependencies  
+```bash
+npm install
+```
+
+### 3️⃣ Run the development server  
+```bash
+npm run dev
+```
+
+## 🌐 Live Demo  
+🔗 Netlify: [Data Board Live](https://databoard1.netlify.app/)  
+🔗 GitHub: [Data Board Repository](https://github.com/AbdelrahmanHabib24/Data-board)  
+
+---
