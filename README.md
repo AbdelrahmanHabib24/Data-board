@@ -77,10 +77,10 @@ src/
 ## 📸 Screenshots  
 
 ### 🔑 Login Page  
-![Login Screenshot](/login.png)  
+![Login Screenshot](./public/login.png)
 
 ### 🖥️ Dashboard  
-![Dashboard Screenshot](/dashboard.png)  
+![Dashboard Screenshot](./public/dashboard.png)
 
 
 ## ⚡ Getting Started  
