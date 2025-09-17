@@ -77,7 +77,7 @@ export default function DashboardLayout({
 
         <main className="flex-1 overflow-auto px-2 sm:px-4 md:px-6 py-4 sm:py-6 relative">
           {loading ? (
-            <div className="absolute inset-0 z-20 flex items-center justify-center bg-white/70 dark:bg-gray-900/70">
+            <div className="absolute inset-0 z-20 flex items-center justify-center bg-white/70 ">
               <Loading />
             </div>
           ) : (

@@ -25,8 +25,8 @@ export default function Header({ type = "users", onNew, onSearch, searchValue = 
           value={searchValue}
           onChange={(e) => onSearch(e.target.value)}
           placeholder={placeholder}
-          className="px-3 py-1 rounded-md border border-gray-300 dark:border-gray-600
-                     bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200
+          className="px-3 py-1 rounded-md border border-gray-300
+                     bg-white 
                      focus:outline-none focus:ring-2 focus:ring-yellow-500"
         />
       )}
