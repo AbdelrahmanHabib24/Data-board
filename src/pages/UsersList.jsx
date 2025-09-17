@@ -23,21 +23,19 @@ export default function UsersList({
     setPage,
     query,
     setQuery,
+    limit: contextLimit
   } = useUsers();
 
-  const displayedUsers = limit ? users.slice(0, limit) : users;
-
+  const displayLimit = limit || contextLimit;
+  const displayedUsers = users.slice(0, displayLimit);
+// baseColumns
   const baseColumns = [
     { key: "id", label: "ID" },
-    {
-      key: "name",
-      label: "Name",
-      render: (row) => `${row.firstName} ${row.lastName}`,
-    },
+    { key: "name", label: "Name", render: (row) => `${row.firstName} ${row.lastName}` },
     { key: "email", label: "Email" },
     { key: "city", label: "City", render: (u) => u.address?.city ?? "" },
   ];
-
+// button Actions
   const Actions = (onEdit) => [
     ...baseColumns,
     {
@@ -85,7 +83,7 @@ export default function UsersList({
         <Table
           items={displayedUsers}
           columns={showActions ? Actions(onEdit) : baseColumns}
-          loading={false}
+          loading={loading}
           error={error}
         />
       )}

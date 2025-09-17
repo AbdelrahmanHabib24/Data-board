@@ -83,7 +83,7 @@ export default function DashboardLayout({
           ) : (
             <>
               {/* Page Content */}
-              <div className="w-full max-w-8xl sm:mt-2 lg:mb-10 mx-auto  lg:mt-0  min-h-[calc(100vh-500px)]">
+              <div className="w-full max-w-8xl  sm:mt-2 lg:mb-10 mx-auto  lg:mt-0  md:min-h-[calc(100vh-800px)]">
                 {content}
               </div>
 

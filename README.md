@@ -1,13 +1,73 @@
-# React + Vite
+# 🖥️ Data Board  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 A modern and scalable **admin dashboard** built with **React**, **Context API**, and **Tailwind CSS**.  
+It features secure authentication, robust state management, and reusable UI components for managing **Users** and **Posts** efficiently.  
+Optimized for performance, responsiveness, and clean design—making it both lightweight for developers and intuitive for end-users.  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features  
 
-## Expanding the ESLint configuration
+### 🔑 User Authentication  
+- Login form with **react-hook-form** + **zod** schema validation.  
+- Protected routes via a custom **RequireAuth** component.  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# Data-board
+### 👥 Users & Posts Management  
+- Fetch, search, paginate, create, update, and delete **users** and **posts**.  
+- Reusable `<Table />` supports **custom columns**, **actions**, and **loading/error states**.  
+
+### 📱 Responsive UI/UX  
+- Fully responsive layout powered by **Tailwind CSS**.  
+- Smooth page transitions & animations with **AOS (Animate On Scroll)**.  
+
+### 🧩 Reusable Components  
+- Core building blocks like `DashboardLayout`, `Table`, `FormModal`, `Loading`, `Notifications`, and `ErrorBoundary`.  
+- Modular design for easy extension and scalability.  
+
+### ⚠️ Error Handling & Edge Cases  
+- Inline server-side validation error handling.  
+- Graceful fallback for **network issues** and **empty data** states.  
+- Global **React ErrorBoundary** prevents unexpected crashes.  
+
+---
+
+## 🏗️ Project Structure
+
+src/
+├─ api/
+│  ├─ postsApi.js  
+│  └─ usersApi.js
+├─ components/
+│  ├─ DashboardLayout.jsx
+│  ├─ Table.jsx
+│  ├─ FormModal.jsx
+|  ├─ Sidebar.jsx
+|  ├─ Pagination.jsx
+|  ├─ Button.jsx
+|  ├─ Header.jsx
+│  ├─ Loading.jsx
+│  ├─ Notifications.jsx
+│  └─ ErrorBoundary.jsx
+├─ contexts/
+│  ├─ AuthContext.jsx
+│  ├─ UsersContext.jsx
+│  └─ PostsContext.jsx
+├─ pages/
+│  ├─ Dashboard.jsx
+│  ├─ Login.jsx
+│  ├─ UsersList.jsx
+│  └─ PostsList.jsx
+├─ utils/
+│  └─ schemas.js  
+├─ App.jsx
+├─ main.jsx
+└─ index.css
+
+---
+
+## ⚡ Getting Started  
+
+### 1️⃣ Clone the repository  
+```bash
+git clone https://github.com/AbdelrahmanHabib24/Data-board.git
+cd Data-board

@@ -18,7 +18,6 @@ export default function Dashboard() {
               Latest Users
             </h2>
             <UsersList
-              limit={4}
               showLayout={false}
               showActions={false}
               showPagination={false}
@@ -32,7 +31,6 @@ export default function Dashboard() {
               Latest Posts
             </h2>
             <PostsList
-              limit={4}
               showLayout={false}
               showActions={false}
               showPagination={false}

@@ -1,5 +1,11 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createContext, useState, useEffect, useCallback, useContext } from "react";
+import {
+  createContext,
+  useState,
+  useEffect,
+  useCallback,
+  useContext,
+} from "react";
 import * as usersApi from "../api/usersApi";
 import { toast } from "react-toastify";
 
@@ -12,9 +18,19 @@ export const UsersProvider = ({ children }) => {
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(0);
   const [query, setQuery] = useState("");
+  const [limit, setLimit] = useState(10);
 
+  useEffect(() => {
+    const handleResize = () =>
+      setLimit(Math.max(5, Math.floor((window.innerHeight - 250) / 60)));
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+// loadUsers
   const loadUsers = useCallback(async (page) => {
     setLoading(true);
+    setError(null);
     try {
       const res = await usersApi.getUsers(page);
       setUsers(res.items);
@@ -32,7 +48,7 @@ export const UsersProvider = ({ children }) => {
   useEffect(() => {
     loadUsers(1);
   }, [loadUsers]);
-
+// createUser
   const createUser = async (payload) => {
     try {
       setLoading(true);
@@ -47,7 +63,7 @@ export const UsersProvider = ({ children }) => {
       setLoading(false);
     }
   };
-
+// updateUser
   const updateUser = async (id, payload) => {
     try {
       setLoading(true);
@@ -61,7 +77,7 @@ export const UsersProvider = ({ children }) => {
       setLoading(false);
     }
   };
-
+// deleteUser
   const deleteUser = async (id) => {
     try {
       setLoading(true);
@@ -76,14 +92,14 @@ export const UsersProvider = ({ children }) => {
     }
   };
 
-  const filtered = users.filter((u) =>
+  const filteredUsers = users.filter((u) =>
     JSON.stringify(u).toLowerCase().includes(query.toLowerCase())
   );
 
   return (
     <UsersContext.Provider
       value={{
-        items: filtered,
+        items: filteredUsers,
         rawItems: users,
         loading,
         error,
@@ -91,6 +107,7 @@ export const UsersProvider = ({ children }) => {
         total,
         query,
         setQuery,
+        limit, 
         load: loadUsers,
         create: createUser,
         update: updateUser,

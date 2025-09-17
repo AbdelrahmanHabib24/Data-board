@@ -11,7 +11,7 @@ export default function Button({
       onClick={onClick}
       disabled={disabled}
       className={`
-        px-3 py-3 md:px-4 md:py-2 lg:px-3 lg:py-0.5
+        px-3 py-3 sm:px-4 sm:py-1 lg:px-3 lg:py-0.5
         text-sm md:text-base lg:text-lg
         rounded-lg 
         bg-gradient-to-r from-orange-500 to-yellow-400

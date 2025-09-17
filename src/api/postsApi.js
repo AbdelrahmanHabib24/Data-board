@@ -1,7 +1,7 @@
 const BASE = "https://dummyjson.com";
 
 /** 📄 Get posts */
-export async function getPosts(page = 1, pageSize = 8) {
+export async function getPosts(page = 1, pageSize = 30) {
   const skip = (page - 1) * pageSize;
   const res = await fetch(`${BASE}/posts?limit=${pageSize}&skip=${skip}`);
   const data = await res.json();

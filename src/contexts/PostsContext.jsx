@@ -12,7 +12,18 @@ export const PostsProvider = ({ children }) => {
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(0);
   const [query, setQuery] = useState("");
+  const [limit, setLimit] = useState(0);
 
+  useEffect(() => {
+  const handleResize = () =>
+    setLimit(Math.max(5, Math.floor((window.innerHeight - 250) / 60)));
+
+  handleResize();
+  window.addEventListener("resize", handleResize);
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
+
+// load posts
   const loadPosts = useCallback(async (page) => {
     setLoading(true);
     setError(null);
@@ -33,7 +44,7 @@ export const PostsProvider = ({ children }) => {
   useEffect(() => {
     loadPosts(1);
   }, [loadPosts]);
-
+// create post
   const createPost = async (payload) => {
     try {
       setLoading(true);
@@ -48,7 +59,7 @@ export const PostsProvider = ({ children }) => {
       setLoading(false);
     }
   };
-
+// update post
   const updatePost = async (id, payload) => {
     try {
       setLoading(true);
@@ -62,7 +73,7 @@ export const PostsProvider = ({ children }) => {
       setLoading(false);
     }
   };
-
+// delete post
   const deletePost = async (id) => {
     try {
       setLoading(true);
@@ -76,7 +87,7 @@ export const PostsProvider = ({ children }) => {
       setLoading(false);
     }
   };
-
+// filter
   const filteredPosts = posts.filter((p) =>
     JSON.stringify(p).toLowerCase().includes(query.toLowerCase())
   );
@@ -92,6 +103,7 @@ export const PostsProvider = ({ children }) => {
         total,
         query,
         setQuery,
+        limit,         
         load: loadPosts,
         create: createPost,
         update: updatePost,
