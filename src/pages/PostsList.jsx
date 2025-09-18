@@ -4,7 +4,6 @@ import DashboardLayout from "../components/DashboardLayout";
 import { FaEdit, FaTrash } from "react-icons/fa";
 
 export default function PostsList({
-  limit, 
   showActions = true,
   showLayout = true,
 }) {
@@ -20,20 +19,24 @@ export default function PostsList({
     setPage,
     query,
     setQuery,
-    limit: contextLimit, 
+    limit: contextLimit,
   } = usePosts();
 
-  const displayLimit = limit || contextLimit;
-  const displayedPosts = posts.slice(0, displayLimit);
+  const displayedPosts = posts.slice(0,  contextLimit);
 
-// baseColumns
+  // baseColumns for table
   const baseColumns = [
     { key: "id", label: "ID" },
     { key: "title", label: "Title" },
-    { key: "body", label: "Body", render: (p) => p.body?.slice(0, 35) + (p.body?.length > 60 ? "…" : "") || "—" },
+    {
+      key: "body",
+      label: "Body",
+      render: (p) =>
+        p.body?.slice(0, 35) + (p.body?.length > 60 ? "…" : "") || "—",
+    },
     { key: "userId", label: "User", render: (p) => `User #${p.userId}` },
   ];
-// button Actions
+  // button Actions
   const Actions = (onEdit) => [
     ...baseColumns,
     {
@@ -75,14 +78,12 @@ export default function PostsList({
       loading={loading}
     >
       {({ onEdit }) => (
-        <div className="overflow-auto">
-          <Table
-            items={displayedPosts}
-            columns={showActions ? Actions(onEdit) : baseColumns}
-            loading={loading}
-            error={error}
-          />
-        </div>
+        <Table
+          items={displayedPosts}
+          columns={showActions ? Actions(onEdit) : baseColumns}
+          loading={loading}
+          error={error}
+        />
       )}
     </DashboardLayout>
   );

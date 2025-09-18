@@ -13,12 +13,20 @@ import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import UsersList from "./pages/UsersList.jsx";
 import PostsList from "./pages/PostsList.jsx";
+import SignUp from "./pages/SignUp.jsx";
+import Loading from "./components/Loading.jsx";
 
 function RequireAuth({ children }) {
-  const { user } = useContext(AuthContext);
-  if (!user) return <Navigate to="/login" />;
+  const { user, loading } = useContext(AuthContext);
+  if (loading) {
+    return <Loading/>; 
+  }
+  if (!user) {
+    return <Navigate to="/login" />;
+  }
   return children;
 }
+
 
 export default function App() {
   useEffect(() => {
@@ -31,6 +39,7 @@ export default function App() {
         <PostsProvider>
           <Routes>
             <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp/>}/>
             <Route
               path="/"
               element={

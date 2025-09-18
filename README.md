@@ -9,24 +9,27 @@ Optimized for performance, responsiveness, and clean design—making it both lig
 ## 🚀 Features  
 
 ### 🔑 User Authentication  
-- Login form with **react-hook-form** + **zod** schema validation.  
-- Protected routes via a custom **RequireAuth** component.  
+- Login form with react-hook-form + zod schema validation.  
+- Protected routes via a custom RequireAuth component.  
 
 ### 👥 Users & Posts Management  
-- Fetch, search, paginate, create, update, and delete **users** and **posts**.  
-- Reusable `<Table />` supports **custom columns**, **actions**, and **loading/error states**.  
+- Fetch, search, paginate, create, update, and delete users and posts.  
+- Reusable <Table /> supports custom columns, actions, and loading/error states.  
 
 ### 📱 Responsive UI/UX  
-- Fully responsive layout powered by **Tailwind CSS**.  
-- Smooth page transitions & animations with **AOS (Animate On Scroll)**.  
+- Fully responsive layout powered by Tailwind CSS.  
+- Smooth page transitions & animations with AOS (Animate On Scroll).  
 
 ### 🧩 Reusable Components  
-- Core building blocks like `DashboardLayout`, `Table`, `FormModal`, `Sidebar`, `Pagination`, `Button`, `Header`, `Loading`, `Notifications`, and `ErrorBoundary`.  
+- Core building blocks like DashboardLayout, Table, FormModal, Sidebar, Pagination, Button, Header, Loading, Notifications, and ErrorBoundary.  
 - Modular design for easy extension and scalability.  
 
 ### ⚠️ Error Handling & Edge Cases  
-- **Client-side validation**: All form fields are validated before submission (e.g., required fields, email format).    
-- Global **React ErrorBoundary** prevents unexpected crashes.  
+- Client & server-side validation and error handling.  
+- Global `ErrorBoundary` to prevent crashes.  
+- Safe localStorage usage with defaults.  
+- Clear loading & error states for better UX.  
+
 
 ---
 

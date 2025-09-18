@@ -13,8 +13,6 @@ export default function DashboardLayout({
   type = "users",
   create,
   update,
-  onNew,
-  onEdit,
   onSearch,
   searchValue = "",
   hideNewButton = false,
@@ -31,8 +29,8 @@ export default function DashboardLayout({
   const [modalOpen, setModalOpen] = useState(false);
 
   // ✅ Handlers
-  const handleEdit = onEdit || ((item) => openModal(item));
-  const handleNew = onNew || (() => openModal(null));
+  const handleEdit =  ((item) => openModal(item));
+  const handleNew =  (() => openModal(null));
 
   const openModal = (item) => {
     setEditing(item);

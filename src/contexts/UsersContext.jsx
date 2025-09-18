@@ -18,7 +18,7 @@ export const UsersProvider = ({ children }) => {
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(0);
   const [query, setQuery] = useState("");
-  const [limit, setLimit] = useState(10);
+  const [limit, setLimit] = useState(0);
 
   useEffect(() => {
     const handleResize = () =>

@@ -5,7 +5,6 @@ import DashboardLayout from "../components/DashboardLayout";
 import { FaEdit, FaTrash } from "react-icons/fa";
 
 export default function UsersList({
-  limit,
   showLayout = true,
   showActions = true,
   showPagination = true,
@@ -26,8 +25,7 @@ export default function UsersList({
     limit: contextLimit
   } = useUsers();
 
-  const displayLimit = limit || contextLimit;
-  const displayedUsers = users.slice(0, displayLimit);
+  const displayedUsers = users.slice(0, contextLimit);
 // baseColumns
   const baseColumns = [
     { key: "id", label: "ID" },
