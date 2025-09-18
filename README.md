@@ -11,6 +11,7 @@ Optimized for performance, responsiveness, and clean design—making it both lig
 ### 🔑 User Authentication  
 - Login form with react-hook-form + zod schema validation.  
 - Protected routes via a custom RequireAuth component.  
+- Sign Up form with react-hook-form + Zod schema validation.
 
 ### 👥 Users & Posts Management  
 - Fetch, search, paginate, create, update, and delete users and posts.  
@@ -67,6 +68,7 @@ src/
 ├─ pages/
 │  ├─ Dashboard.jsx
 │  ├─ Login.jsx
+│  ├─ SignUp.jsx
 │  ├─ UsersList.jsx
 │  └─ PostsList.jsx
 ├─ utils/
@@ -106,6 +108,4 @@ npm run dev
 
 ## 🌐 Live Demo  
 🔗 Netlify: [Data Board Live](https://databoard1.netlify.app/)  
-🔗 GitHub: [Data Board Repository](https://github.com/AbdelrahmanHabib24/Data-board)  
-
 ---
